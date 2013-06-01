@@ -5,8 +5,14 @@ class Property < ActiveRecord::Base
   
   attr_accessible :parcel_id, :address, :land_value, :building_value, :owner, :vacant, :taxes, :latitude, :longitude
   
+  acts_as_gmappable :process_geocoding => false
+  
   has_many :burdens, :dependent => :destroy
   has_many :suggestions, :dependent => :destroy
+  
+  def gmaps4rails_address
+    self.address
+  end
   
   validates :parcel_id, :presence => true,
                         :length => { :maximum => PARCEL_LEN }
