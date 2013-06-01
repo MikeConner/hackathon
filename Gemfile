@@ -15,6 +15,7 @@ group :assets do
   gem 'jquery-ui-rails', '1.1.1'
   gem 'uglifier', '2.1.0'
   gem 'sass-rails',   '3.2.5'
+  gem 'bootstrap-sass',
 end
 
 gem 'haml', '3.1.7'
