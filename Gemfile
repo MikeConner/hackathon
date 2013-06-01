@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'pg', '0.15.1'
 gem 'taps', '0.3.24'
+gem 'gmaps4rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -15,7 +16,7 @@ group :assets do
   gem 'jquery-ui-rails', '1.1.1'
   gem 'uglifier', '2.1.0'
   gem 'sass-rails',   '3.2.5'
-  gem 'bootstrap-sass',
+  gem 'bootstrap-sass'
 end
 
 gem 'haml', '3.1.7'
