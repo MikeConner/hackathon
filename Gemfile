@@ -7,7 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'pg', '0.15.1'
 gem 'taps', '0.3.24'
-gem 'gmaps4rails'
+gem 'gmaps4rails', '1.5.6'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -16,7 +16,7 @@ group :assets do
   gem 'jquery-ui-rails', '1.1.1'
   gem 'uglifier', '2.1.0'
   gem 'sass-rails',   '3.2.5'
-  gem 'bootstrap-sass'
+  gem 'bootstrap-sass', '2.3.1.0'
 end
 
 gem 'haml', '3.1.7'
@@ -39,7 +39,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '2.1.0' #'2.0.2'
+  gem 'capybara', '2.1.0'
   gem 'capybara-webkit', '0.14.2'
   gem 'selenium-webdriver', '2.32.1'
   gem 'launchy', '2.1.2'

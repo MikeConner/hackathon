@@ -11,6 +11,44 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130601204218) do
+
+  create_table "burdens", :force => true do |t|
+    t.integer  "property_id"
+    t.string   "user_identifier"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "likes", :force => true do |t|
+    t.integer  "suggestion_id"
+    t.string   "user_identifier"
+    t.text     "comment"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "properties", :force => true do |t|
+    t.string   "parcel_id",      :limit => 20
+    t.string   "address",        :limit => 128
+    t.integer  "land_value"
+    t.integer  "building_value"
+    t.integer  "taxes"
+    t.string   "owner",          :limit => 64
+    t.boolean  "vacant"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "suggestions", :force => true do |t|
+    t.integer  "property_id"
+    t.string   "category"
+    t.string   "description"
+    t.string   "user_identifier"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
 end
