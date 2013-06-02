@@ -2,13 +2,13 @@
   -#= image_tag 'http://25.media.tumblr.com/tumblr_m66xhfpafY1rutx6lo1_500.jpg'
   = image_tag "http://photos.county.allegheny.pa.us/iasworld/iDoc2/Services/GetPhoto.ashx?parid=#{@property.parcel_id}&jur=002"
 .span4.service
-  %span.lotNum Lot Number
-  %h1= @property.parcel_id
+  %span.lotNum= @property.address 
+  %h1= @property.owner 
   %ul.icons
     %li
-      %span= @property.address
+      %span Lot Number:
       %br
-      %span= @property.owner
+      %span= @property.parcel_id
     %li
       %br
       %i.icon-ok

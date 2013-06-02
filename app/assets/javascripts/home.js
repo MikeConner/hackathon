@@ -9,7 +9,8 @@ $(function() {
     }
   }
   
-  
+
+
   function showPosition(position) {
     //alert("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude); 
 	data_obj = {"latitude": position.coords.latitude, "longitude": position.coords.longitude }

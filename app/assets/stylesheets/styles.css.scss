@@ -239,25 +239,16 @@ input[type="color"].flat:focus,
   width: 100%!important;
   border-style:none;
   box-shadow:none;
+  height:650px;
   img {max-width:none;}
 }
 
-
-
-
-.map_container {
-  max-width: none;
-  padding: 0;
-  width: 100%!important;
-  border-style:none;
-  box-shadow:none;
-}
+footer{display:hidden;}
 
 .gmaps4rails_map {
   width: 100%!important;
-  min-height:100%;
-  height:auto !important;
-  height:100%;
+  min-height:650px;
+  height:650px;
   position: absolute;
   top:50px;
   bottom:0;
@@ -344,7 +335,7 @@ input[type="color"].flat:focus,
       margin-right: 20px;
       display: inline-block;
       .title {
-        color:#ddd;
+        color:#2777;
         display: block;
         font-size: 1.1em;
       }
@@ -536,11 +527,10 @@ input[type="color"].flat:focus,
 .lotNum {
   color:#999;
   font-size: 1.2em;
-  border-bottom:1px solid #000;
   width: 100%;
   display: block;
   color:#000;
-  padding-bottom:10px;
+  text-transform: lowercase;
 }
 
 .property {
@@ -571,7 +561,7 @@ input[type="color"].flat:focus,
  h1 {
     margin-bottom:10px;
     margin-top: 0;
-    font-size:2.5em;
+    font-size:1.5em;
     color:#1fbba6;
   }
   .colorme {
@@ -638,6 +628,39 @@ footer hr {
     -moz-box-shadow: 0 0 0 0 transparent;
     box-shadow: 0 0 0 0 transparent;
 }
+
+
+
+
+
+.suggestion {
+  h1 {
+    font-size: 34px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    line-height: 34px;
+    color: #626c72;
+  }
+
+  h2 {
+    color:#ff755a;
+    font-size:21px;font-weight:200;line-height:30px;
+  }
+
+  input, textarea, .uneditable-input {
+    height:25%!important;
+    width:50%!important;
+  }
+
+  .btn {
+    width:25%!important;
+    float: left;
+    margin-right: 10px;
+    display: inline-block;
+  }
+
+}
+
 
 
 .row-fluid .clear-margin {
