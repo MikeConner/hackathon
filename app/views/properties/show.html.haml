@@ -1,9 +1,40 @@
 .property-img
   -#= image_tag 'http://25.media.tumblr.com/tumblr_m66xhfpafY1rutx6lo1_500.jpg'
   = image_tag "http://photos.county.allegheny.pa.us/iasworld/iDoc2/Services/GetPhoto.ashx?parid=#{@property.parcel_id}&jur=002"
-.span6
-  .btn.btn-primary
-    What the hell
+.span4.service
+  %span.lotNum Lot Number
+  %h1= @property.parcel_id
+  %ul.icons
+    %li
+      %span= @property.address
+      %br
+      %span= @property.owner
+    %li
+      %br
+      %i.icon-ok
+      - if @property.vacant?
+        %em Vacant
+      - else
+        %em Occupied
+    %li
+      %i.icon-ok
+      %span== Land: #{number_to_currency(@property.land_value)}
+    %li
+      %i.icon-ok  
+      %span== Building: #{number_to_currency(@property.building_value)}
+    %li
+      %i.icon-ok  
+      %span== Total: #{number_to_currency(@property.value)}
+      - if !@property.taxes.nil?
+        %span== Taxes: #{number_to_currency(@property.taxes)}
+      - if !@property.lot_area.nil?
+        %span== #{@property.lot_area} sq. feet
+  %br
+  - if @can_rescue
+    = link_to 'Rescue', new_suggestion_path(:property_id => @property.id), :class => 'btn btn-large btn-primary'
+  - else
+    = link_to 'Show Progress', suggestions_path(:property_id => @property.id), :class => 'btn btn-large btn-success'
+-#.span6
   %h1= @property.parcel_id
   %em= @property.tax_category
   %h3= @property.address
