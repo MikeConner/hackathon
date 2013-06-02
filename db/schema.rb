@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130602020635) do
+ActiveRecord::Schema.define(:version => 20130602022352) do
 
   create_table "burdens", :force => true do |t|
     t.integer  "property_id"
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(:version => 20130602020635) do
     t.integer  "land_value"
     t.integer  "building_value"
     t.integer  "taxes"
-    t.string   "owner",          :limit => 64
     t.boolean  "vacant"
     t.decimal  "latitude"
     t.decimal  "longitude"
@@ -42,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20130602020635) do
     t.datetime "updated_at",                    :null => false
     t.string   "tax_category"
     t.integer  "lot_area"
+    t.string   "owner",          :limit => 128
   end
 
   add_index "properties", ["parcel_id"], :name => "index_properties_on_parcel_id", :unique => true
