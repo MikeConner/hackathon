@@ -1,3 +1,38 @@
+body, h1, h2, h3, h4, h5, h6 {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
+}
+
+
+/* Map CSS */
+.map-frame {
+    
+}
+
+.map-content {
+    z-index: 10;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 390px;
+    background-color: black;
+    color: #FFF;
+}
+
+.map_container {
+  max-width: none;
+  padding: 0;
+  width: 100%!important;
+  height: 400px;
+  position: relative;
+}
+
+.gmaps4rails_map {
+  width: 100%!important;
+}
+
+
+
 
 
 
@@ -8,9 +43,34 @@
 .debug2{
 	background-color:#efefef!important;
 }
-.property-bar {
-  height:240px;
+
+.property-icon {
+  width:45px;
 }
+
+.property-row{
+  display: block;
+  height: 120px;
+    .infobox {
+      height:120px;
+      width:20%;
+      background-color:#39b6e5;
+      margin-top:-2px;
+      float: left;
+
+    .search {
+      float: left;
+    }
+
+      h3 {
+        color:white;
+        font-size:2em;
+        padding:25px 30px;
+        line-height:1.2em;
+      }
+    }
+}
+
 
 .row-fluid .clear-margin {
 	margin:0px!important;

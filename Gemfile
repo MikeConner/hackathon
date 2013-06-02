@@ -20,6 +20,7 @@ group :assets do
 end
 
 gem 'haml', '3.1.7'
+gem 'font-awesome-rails'
 
 gem 'jquery-rails', '2.1.2'
 # Move this into dev/test when deploying unicorn

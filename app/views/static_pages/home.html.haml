@@ -1,2 +1,34 @@
-%h1 Lotopia
 = gmaps4rails(@map_data)
+
+
+.property-row
+  .infobox
+    %h3 Property <br/>Information
+    .arrow-box
+      %i.icon-chevron-sign-right
+  .search
+    %input.span3{:placeholder => "Enter your location", :type => "text"}/
+
+
+
+
+
+-#// Application
+  .row-fluid.clear-margin
+    .span3.property-infobox
+      %h3 Property <br/>Information
+      .arrow-box
+        %i.icon-chevron-sign-right
+    .span9.debug
+      .row-fluid
+        .span3
+          Enter your location
+        .span3
+          = image_tag 'scout-icon.png', {:class => 'property-icon'}
+          Available to Scout
+        .span3
+          = image_tag 'building-icon.png', {:class => 'property-icon'}
+          Properties Rescued
+        .span3
+          = image_tag 'money-icon.png', {:class => 'property-icon'}
+          Property Value
