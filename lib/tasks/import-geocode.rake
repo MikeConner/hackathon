@@ -11,7 +11,7 @@ namespace :db do
         idx = fields[0].to_i
         if idx != 0
           p = Property.find(idx)
-          if !p.nil?
+          if !p.nil? and !p.mappable?
             p.update_attributes!(:latitude => fields[1], :longitude => fields[2])
           end
         end

@@ -15,7 +15,10 @@
     = image_tag 'building-icon.png', {:class => 'property-icon pull-left'}
     .number
       = number_with_delimiter(@rescues)
-    .title Properties Rescued
+    - if 1 == @rescues
+      .title Property Rescued
+    - else
+      .title Properties Rescued
   .value
     = image_tag 'money-icon.png', {:class => 'property-icon pull-left'}
     .number
