@@ -298,6 +298,8 @@ input[type="color"].flat:focus,
 .property-row{
   display: block;
   min-height: 120px;
+  height:100%;
+  overflow: hidden;
     .property-icon {
       width:45px;
       margin-right: 10px;
@@ -360,6 +362,129 @@ input[type="color"].flat:focus,
 }
 
 
+
+
+/* Property View */
+
+.property-img {
+  width:600px;
+  display: inline-block;
+  float: left;
+  img {
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+    .property-img {
+      width:100%;
+      display: inline-block;
+      float: left;
+      img {
+        height:auto;
+        width: 100%;
+      }
+    }
+  }
+
+
+
+
+
+/* Footer */
+.tag-cloud {
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
+}
+.tag-cloud li {
+    display: inline-block;
+    margin-bottom: 15px;
+    position: relative;
+}
+.tag-cloud a {
+    margin-right: 5px;
+    padding: 6px 12px;
+    border: 0;
+    background: #454a4d;
+    color: #fff;
+    text-decoration: none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+.tag-cloud a:hover {
+    background: #1fbba6;
+}
+.tag-cloud span {
+    margin-right: 5px;
+}
+.tag-cloud .active {
+    background: #1fbba6;
+}
+
+
+footer {
+    padding-top: 15px;
+    color: #aaa;
+    border-top: 5px solid #212325;
+    background: #2d3032;
+}
+footer h4 {
+    color: #fff;
+    font-size: 14px;
+}
+footer a {
+    color: #1fbba6;
+    border-bottom: 1px dotted #aaa;
+}
+footer a:hover {
+    color: #fff;
+}
+footer .bottom-line {
+    width: auto;
+    padding: 20px;
+    background: #212325;
+}
+footer .bottom-line p {
+    margin: 0;
+}
+footer hr {
+    border-top: 0;
+    border-bottom: 1px solid #454a4d;
+}
+.footer-form .btn {
+    border: 0;
+    text-shadow: 0 0 0 transparent;
+    -webkit-box-shadow: 0 0 0 0 transparent;
+    -moz-box-shadow: 0 0 0 0 transparent;
+    box-shadow: 0 0 0 0 transparent;
+}
+.footer-form .btn:hover {
+    border: 0;
+}
+.footer-form fieldset input[type="text"] {
+    border: 1px solid #000;
+    -webkit-box-shadow: 0 0 0 0 transparent;
+    -moz-box-shadow: 0 0 0 0 transparent;
+    box-shadow: 0 0 0 0 transparent;
+}
+footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    .tags {
+      margin-bottom: 15px;
+    }
+}
+footer .bottom-line {
+    margin-left: -20px;
+    margin-right: -20px;
+}
 
 .row-fluid .clear-margin {
 	margin:0px!important;
