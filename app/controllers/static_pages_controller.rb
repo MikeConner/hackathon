@@ -13,12 +13,21 @@ class StaticPagesController < ApplicationController
     @build_values =  Property.near([latitude, longitude],radius).geocoded.sum(:building_value)
     @prop_value = @land_values.to_f + @build_values.to_f
     @map_data = @properties.to_gmaps4rails do |property, marker|
-      marker.infowindow render_to_string(:partial => "infowindow", :locals => { :property => property})
+      marker.infowindow render_to_string(:partial => "infowindow", :locals => { :property => property })
       marker.title "#{property.address}"
       #marker.json({ :owner => property.owner, :category => property.tax_category})
       #marker.picture({:picture => "http://mapicons.nicolasmollet.com/     wp-content/uploads/mapicons/shape-default/color-3875d7/shapeco     lor-color/shadow-1/border-dark/symbolstyle-contrast/symbolshad     owstyle-dark/gradient-iphone/information.png",
       #                :width => 32,
       #                :height => 32})
     end  
+  end
+  
+  def points   
+  end
+  
+  def delinquent
+  end
+  
+  def income
   end
 end

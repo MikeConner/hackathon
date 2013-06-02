@@ -24,6 +24,7 @@ class SuggestionsController < ApplicationController
     @suggestion = Suggestion.find(params[:id])
     @suggestion.likes.create(:comment => params[:comment], :user_identifier => request.remote_ip, :positive => 'Agree' == params['commit'])
     
-    redirect_to suggestions_path(:property_id => params[:property_id])
+    #redirect_to suggestions_path(:property_id => params[:property_id])
+    redirect_to crowd_score_path, notice: 'Thank you for your opinion!'
   end
 end
