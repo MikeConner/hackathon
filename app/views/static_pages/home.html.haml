@@ -9,12 +9,12 @@
   .value
     = image_tag 'scout-icon.png', {:class => 'property-icon pull-left'}
     .number
-      = @properties.count
+      = number_with_delimiter(@properties.count)
     .title Available to Scout
   .value
     = image_tag 'building-icon.png', {:class => 'property-icon pull-left'}
     .number
-      = @rescues
+      = number_with_delimiter(@rescues)
     .title Properties Rescued
   .value
     = image_tag 'money-icon.png', {:class => 'property-icon pull-left'}
