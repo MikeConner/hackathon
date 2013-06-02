@@ -1,4 +1,6 @@
 = gmaps4rails(@map_data)
+- if !session[:latitude].nil? and !session[:longitude].nil?
+  #geolocation{:latitude => session[:latitude], :longitude =>  session[:longitude]}
 .property-row
   .infobox
     %h3 Property <br/>Information
@@ -26,11 +28,6 @@
     .title Property Value
 .social-row
   &nbsp;
-
-
-
-
-
 -#// Application
   .row-fluid.clear-margin
     .span4.property-infobox

@@ -9,6 +9,7 @@ $(function() {
     }
   }
   
+  
   function showPosition(position) {
     //alert("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude); 
 	data_obj = {"latitude": position.coords.latitude, "longitude": position.coords.longitude }
@@ -24,6 +25,15 @@ $(function() {
   }
 
   getLocation();
+  
+  var code = $('#geolocation');
+  if (code.length > 0) {
+	  //var centerpoint = new google.maps.LatLng($('#geolocation').attr('latitude'), $('#geolocation').attr('longitude'));
+      //Gmaps.map.map.setCenter(centerpoint);  
+      //Gmaps.map.map_options.auto_adjust = false;
+      //Gmaps.map.map_options.center_latitude = parseFloat($('#geolocation').attr('latitude'));
+      //Gmaps.map.map_options.center_longitude = parseFloat($('#geolocation').attr('longitude'));
+  }
 
   $('#location_entry').change(function(){
 	jQuery.ajax({url:"/geocode",
