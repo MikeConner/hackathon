@@ -5,12 +5,15 @@ namespace :db do
     
     puts "Importing Geocoding data in property..."
 
-    File.open('/Users/jeff/Documents/gps-out.txt', 'r') do |f|
+    File.open('/Users/jeff/Documents/gps-out2.txt', 'r') do |f|
       while (line = f.gets)
         fields = line.split(',')
-        p = Property.find(fields[0].to_i)
-        if !p.nil?
-          p.update_attributes!(:latitude => fields[1], :longitude => fields[2])
+        idx = fields[0].to_i
+        if idx != 0
+          p = Property.find(idx)
+          if !p.nil?
+            p.update_attributes!(:latitude => fields[1], :longitude => fields[2])
+          end
         end
       end
     end    
