@@ -7,21 +7,24 @@
 #  category        :string(255)
 #  description     :string(255)
 #  user_identifier :string(255)
-#  created_at      :datetime        not null
-#  updated_at      :datetime        not null
+#  created_at      :datetime
+#  updated_at      :datetime
+#  title           :string(140)
 #
 
 class Suggestion < ActiveRecord::Base
   DEFAULT_CATEGORY = 'Housing'
   CATEGORIES = ['Grocery', 'Restaurant', 'Art Space', 'Coworking Space', 'Burlesque', 'Bar', 'Retail', 'Park', 'Housing', 'Pharmacy', 'Waffle House', 'Other']
+  TITLE_LEN = 140
   
-  attr_accessible :category, :description, :user_identifier,
+  attr_accessible :category, :description, :user_identifier, :title,
                   :property_id
                   
   belongs_to :property
   has_many :likes, :dependent => :destroy
   
   validates_inclusion_of :category, :in => CATEGORIES
-  validates_presence_of :description
+  validates :title, :presence => true,
+                    :length => { :maximum => TITLE_LEN }
   validates_presence_of :user_identifier
 end

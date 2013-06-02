@@ -13,6 +13,6 @@
         %div{:style => 'color:red'}= comment
   = form_tag like_suggestion_path(:id => suggestion.id, :property_id => property.id), :method => :put do
     = label_tag :comment
-    = text_area_tag :comment, nil, :size => '60x4'
+    = text_area_tag :comment, nil, :size => '60x4', :placeholder => 'Comment'
     = submit_tag 'Like'
     = submit_tag 'Dislike'

@@ -1,7 +1,11 @@
 .field
+  = f.label :title
+  %br
+  = f.text_field :title, :maxlength => Suggestion::TITLE_LEN
+.field
   = f.label :description
   %br
-  = f.text_area :description, :size => '60x4'
+  = f.text_area :description, :size => '60x4', :placeholder => 'Description (optional)'
 .field
   = f.label :category
   %br

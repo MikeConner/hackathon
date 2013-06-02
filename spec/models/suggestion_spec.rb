@@ -7,8 +7,9 @@
 #  category        :string(255)
 #  description     :string(255)
 #  user_identifier :string(255)
-#  created_at      :datetime        not null
-#  updated_at      :datetime        not null
+#  created_at      :datetime
+#  updated_at      :datetime
+#  title           :string(140)
 #
 
 require 'spec_helper'
