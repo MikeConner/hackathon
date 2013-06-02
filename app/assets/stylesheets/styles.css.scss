@@ -3,6 +3,9 @@ body, h1, h2, h3, h4, h5, h6 {
    font-weight: 300;
 }
 
+@media (max-width: 767px) {
+  body {padding:0!important;}
+}
 
 /* Overrides */
 .navbar {
@@ -234,14 +237,19 @@ input[type="color"].flat:focus,
   max-width: none;
   padding: 0;
   width: 100%!important;
-  height: 400px;
-  position: relative;
   border-style:none;
   box-shadow:none;
 }
 
 .gmaps4rails_map {
   width: 100%!important;
+  min-height:100%;
+  height:auto !important;
+  height:100%;
+  position: absolute;
+  top:50px;
+  bottom:0;
+  z-index: 5;
 }
 
 
@@ -298,6 +306,7 @@ input[type="color"].flat:focus,
 .property-row{
   display: block;
   min-height: 120px;
+  background-color: white;
   height:100%;
   overflow: hidden;
     .property-icon {
@@ -307,7 +316,7 @@ input[type="color"].flat:focus,
       font-size: 1.8em;
     }
     .value {
-      width:200px;
+      width:18%;
       float: left;
       margin-top: 35px;
       margin-right: 20px;
@@ -345,7 +354,7 @@ input[type="color"].flat:focus,
       h3 {
         color:white;
         font-size:2em;
-        padding:20px 0 20px 30px;
+        padding:20px 0 20px 60px;
         line-height:1.2em;
         display: inline-block;
         float: left;
@@ -392,6 +401,9 @@ input[type="color"].flat:focus,
 
 
 /* Footer */
+
+.tags {margin-bottom:10px;}
+
 .tag-cloud {
     margin-left: 0;
     padding: 0;
@@ -426,6 +438,59 @@ input[type="color"].flat:focus,
     background: #1fbba6;
 }
 
+
+.lotNum {
+  color:#999;
+  font-size: 1.2em;
+  border-bottom:1px solid #000;
+  width: 100%;
+  display: block;
+  color:#000;
+  padding-bottom:10px;
+}
+
+.service {
+  background:#fff;
+  transition:border 500ms ease-out;
+  -webkit-transition:border 500ms ease-out;
+  -moz-transition:border 500ms ease-out;
+  -o-transition:border 500ms ease-out;
+  -webkit-transition:color 1s ease-in;
+  -moz-transition:color 1s ease-in;
+  -o-transition:color 1s ease-in;
+  transition:color 1s ease-in;
+  margin-top:35px;
+
+  ul { list-style:none;
+    li { 
+      list-style:none;
+      .icon-ok {margin-right:10px;}
+    }
+  }
+ h1 {
+    margin-bottom:10px;
+    margin-top: 0;
+    font-size:2.5em;
+    color:#1fbba6;
+  }
+  .colorme {
+    color:#ff6666;
+  }
+  .icon {
+    margin-right:7px;
+  }
+  .bottomlink {
+    margin-bottom:-18px;
+    text-align:right;
+    margin-right: -20px;
+  }
+}
+
+
+.bottom {
+  position:relative;
+  z-index: 20;
+}
 
 footer {
     padding-top: 15px;
@@ -472,19 +537,7 @@ footer hr {
     -moz-box-shadow: 0 0 0 0 transparent;
     box-shadow: 0 0 0 0 transparent;
 }
-footer {
-    margin-left: -20px;
-    margin-right: -20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    .tags {
-      margin-bottom: 15px;
-    }
-}
-footer .bottom-line {
-    margin-left: -20px;
-    margin-right: -20px;
-}
+
 
 .row-fluid .clear-margin {
 	margin:0px!important;

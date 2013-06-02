@@ -1,53 +1,79 @@
 .row
-%footer
-  .container
-    / row of widgets
-    .row.tags
-      .span3
-        %h4 About Us
-        %p
-          The only way it could be more immaculate is if it were a gif and granny-head was dancing excitedly.
-          %a{:href => "#"} Aenean
-          nisl orci, condimentum.      
-      / /.span3
-      %hr.visible-phone/
-      .span9
-        %h4 Popular Tags Monthly
-        %ul.tag-cloud
-          %li
-            %a{:href => "#"} styles
-          %li
-            %a{:href => "#"} layout
-          %li
-            %a{:href => "#"} letterpress
-          %li
-            %a{:href => "#"} magazine
-          %li
-            %a{:href => "#"} menu
-          %li
-            %a{:href => "#"} metal
-          %li
-            %a{:href => "#"} navigation
-          %li
-            %a{:href => "#"} paper
-          %li
-            %a{:href => "#"} print
-          %li
-            %a{:href => "#"} scripts
-          %li
-            %a{:href => "#"} nodes
-          %li
-            %a{:href => "#"} metal
-          %li
-            %a{:href => "#"} navigation
-          %li
-            %a{:href => "#"} paper
-      / /.span3
-    / /.row
-  / /.container
-  .bottom-line
-    .container
-      %p
-        \© 2013 Designed by
-        %a{:href => "http://twitter.com/heyallanmoreno", :target => "_blank"} @visualbam
+  .bottom
+    .property-row
+      .infobox
+        %h3 Property <br/>Information
+        .arrow-box
+          %i.icon-chevron-sign-right
+      .search
+        %input.span3.home{:placeholder => "Enter your location", :type => "text"}/
+      .value
+        = image_tag 'scout-icon.png', {:class => 'property-icon pull-left'}
+        .number
+          = number_with_delimiter(@properties.count)
+        .title Available to Scout
+      .value
+        = image_tag 'building-icon.png', {:class => 'property-icon pull-left'}
+        .number
+          = number_with_delimiter(@rescues)
+        - if 1 == @rescues
+          .title Property Rescued
+        - else
+          .title Properties Rescued
+      .value
+        = image_tag 'money-icon.png', {:class => 'property-icon pull-left'}
+        .number
+          = number_to_currency(@prop_value, :precision => 0)
+        .title Property Value
+    %footer
+      .container
+        / row of widgets
+        .row.tags
+          .span3
+            %h4 About Us
+            %p
+              The only way it could be more immaculate is if it were a gif and granny-head was dancing excitedly.
+              %a{:href => "#"} Aenean
+              nisl orci, condimentum.      
+          / /.span3
+          %hr.visible-phone/
+          .span9
+            %h4 Popular Tags Monthly
+            %ul.tag-cloud
+              %li
+                %a{:href => "#"} styles
+              %li
+                %a{:href => "#"} layout
+              %li
+                %a{:href => "#"} letterpress
+              %li
+                %a{:href => "#"} magazine
+              %li
+                %a{:href => "#"} menu
+              %li
+                %a{:href => "#"} metal
+              %li
+                %a{:href => "#"} navigation
+              %li
+                %a{:href => "#"} paper
+              %li
+                %a{:href => "#"} print
+              %li
+                %a{:href => "#"} scripts
+              %li
+                %a{:href => "#"} nodes
+              %li
+                %a{:href => "#"} metal
+              %li
+                %a{:href => "#"} navigation
+              %li
+                %a{:href => "#"} paper
+          / /.span3
+        / /.row
+      / /.container
+      .bottom-line
+        .container
+          %p
+            \© 2013 Designed by
+            %a{:href => "http://twitter.com/heyallanmoreno", :target => "_blank"} @visualbam
 = yield :scripts

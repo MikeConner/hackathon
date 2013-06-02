@@ -1,4 +1,5 @@
 = gmaps4rails(@map_data)
+<<<<<<< HEAD
 - if !session[:latitude].nil? and !session[:longitude].nil?
   #geolocation{:latitude => session[:latitude], :longitude =>  session[:longitude]}
 .property-row
@@ -47,3 +48,5 @@
         .span3
           = image_tag 'money-icon.png', {:class => 'property-icon'}
           Property Value
+=======
+>>>>>>> 86a53d4e8af95e0f702f8847cc59e9ae33d4bec8
