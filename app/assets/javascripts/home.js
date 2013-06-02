@@ -25,6 +25,17 @@ $(function() {
 
   getLocation();
 
+  $('#location_entry').change(function(){
+	jQuery.ajax({url:"/geocode",
+	             data: "code=" + $('#location_entry').val(),
+		         type: "PUT",
+		         // Don't need to do anything on success
+	             error: function(xhr, ajaxOptions, thrownError) //{ alert('Oh noes!') },
+	               { alert('error code: ' + xhr.status + ' \n'+'error:\n' + thrownError ); },
+	             async: false
+	});
+  });
+
  var myStyle = [{
         "stylers": [{
             "visibility": "off"
