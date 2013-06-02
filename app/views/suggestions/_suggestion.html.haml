@@ -1,5 +1,5 @@
 .span12
-  %h1= suggestion.category
+  %h1= suggestion.title.to_s + " [" + suggestion.category + "]"
   %h4= suggestion.description
 .span4
   .todo.mrm
