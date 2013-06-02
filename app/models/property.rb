@@ -18,6 +18,10 @@ class Property < ActiveRecord::Base
     !self.latitude.nil? and !self.longitude.nil?
   end
   
+  def value
+    self.land_value + self.building_value
+  end
+  
   validates :parcel_id, :presence => true,
                         :length => { :maximum => PARCEL_LEN },
                         :uniqueness => true

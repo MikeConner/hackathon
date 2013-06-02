@@ -1,0 +1,4 @@
+%h3
+  = link_to property.parcel_id, property_path(property)
+%em= property.tax_category
+= number_to_currency(property.value)
