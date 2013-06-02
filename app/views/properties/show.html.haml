@@ -34,23 +34,3 @@
     = link_to 'Rescue', new_suggestion_path(:property_id => @property.id), :class => 'btn btn-large btn-primary'
   - else
     = link_to 'Show Progress', suggestions_path(:property_id => @property.id), :class => 'btn btn-large btn-success'
--#.span6
-  %h1= @property.parcel_id
-  %em= @property.tax_category
-  %h3= @property.address
-  %h4= @property.owner
-  - if @property.vacant?
-    %em Vacant
-  - else
-    %em Occupied
-  %h3== Land: #{number_to_currency(@property.land_value)}
-  %h3== Building: #{number_to_currency(@property.building_value)}
-  %h3== Total: #{number_to_currency(@property.value)}
-  - if !@property.taxes.nil?
-    %h3== Taxes: #{number_to_currency(@property.taxes)}
-  - if !@property.lot_area.nil?
-    %em== #{@property.lot_area} sq. feet
-  - if @can_rescue
-    %center= link_to 'Rescue', new_suggestion_path(:property_id => @property.id), :class => 'btn btn-large'
-  - else
-    %center= link_to 'Show Progress', suggestions_path(:property_id => @property.id), :class => 'btn btn-large'

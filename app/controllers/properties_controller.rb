@@ -1,5 +1,13 @@
 class PropertiesController < ApplicationController
-  def show
+  DEFAULT_LAT = 40.441783
+  DEFAULT_LONG = -80.000117
+
+  def show 
+    radius = 0.4
+    latitude = session[:latitude].nil? ? DEFAULT_LAT : session[:latitude]
+    longitude = session[:longitude].nil? ? DEFAULT_LONG : session[:longitude]
+    
+    @properties = Property.near([latitude, longitude],radius).geocoded
     @property = Property.find(params[:id])
     @can_rescue = true
     @property.burdens.each do |burden|

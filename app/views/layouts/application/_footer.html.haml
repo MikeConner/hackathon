@@ -1,30 +1,31 @@
 .row
   .bottom
     .property-row
-      .infobox
-        %h3 Property <br/>Information
-        .arrow-box
-          %i.icon-chevron-sign-right
-      .search
-        %input.span3.home#location_entry{:placeholder => "Enter your location", :type => "text"}/
-      .value
-        = image_tag 'scout-icon.png', {:class => 'property-icon pull-left'}
-        .number
-          = number_with_delimiter(@properties.count)
-        .title Available to Scout
-      .value
-        = image_tag 'building-icon.png', {:class => 'property-icon pull-left'}
-        .number
-          = number_with_delimiter(@rescues)
-        - if 1 == @rescues
-          .title Property Rescued
-        - else
-          .title Properties Rescued
-      .value
-        = image_tag 'money-icon.png', {:class => 'property-icon pull-left'}
-        .number
-          = number_to_currency(@prop_value, :precision => 0)
-        .title Property Value
+      -if !@properties.nil?
+        .infobox
+          %h3 Property <br/>Information
+          .arrow-box
+            %i.icon-chevron-sign-right
+        .search
+          %input.span3.home#location_entry{:placeholder => "Enter your location", :type => "text"}/
+        .value
+          = image_tag 'scout-icon.png', {:class => 'property-icon pull-left'}
+          .number
+            = number_with_delimiter(@properties.count)
+          .title Available to Scout
+        .value
+          = image_tag 'building-icon.png', {:class => 'property-icon pull-left'}
+          .number
+            = number_with_delimiter(@rescues)
+          - if 1 == @rescues
+            .title Property Rescued
+          - else
+            .title Properties Rescued
+        .value
+          = image_tag 'money-icon.png', {:class => 'property-icon pull-left'}
+          .number
+            = number_to_currency(@prop_value, :precision => 0)
+          .title Property Value
     %footer
       .container
         / row of widgets

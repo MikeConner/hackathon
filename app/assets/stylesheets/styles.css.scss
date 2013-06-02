@@ -316,7 +316,7 @@ input[type="color"].flat:focus,
       font-size: 1.8em;
     }
     .value {
-      width:18%;
+      width:230px;
       float: left;
       margin-top: 35px;
       margin-right: 20px;
@@ -449,6 +449,12 @@ input[type="color"].flat:focus,
   padding-bottom:10px;
 }
 
+.property {
+  width:100%;
+  height:auto;
+  display: block;
+}
+
 .service {
   background:#fff;
   transition:border 500ms ease-out;
@@ -460,6 +466,7 @@ input[type="color"].flat:focus,
   -o-transition:color 1s ease-in;
   transition:color 1s ease-in;
   margin-top:35px;
+  display: block;
 
   ul { list-style:none;
     li { 
