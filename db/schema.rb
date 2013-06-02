@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601204218) do
+ActiveRecord::Schema.define(:version => 20130602002253) do
 
   create_table "burdens", :force => true do |t|
     t.integer  "property_id"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(:version => 20130601204218) do
     t.decimal  "longitude"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.string   "tax_category"
+    t.integer  "lot_area"
   end
 
   create_table "suggestions", :force => true do |t|

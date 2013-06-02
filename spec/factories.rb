@@ -20,6 +20,8 @@ FactoryGirl.define do
     owner { generate(:random_name) }
     vacant false
     taxes { Random.rand(10000) + 1000 }
+    tax_category 'Taxable'
+    lot_area { Random.rand(10000) + 1000 }
     
     factory :vacant_property do
       vacant true
