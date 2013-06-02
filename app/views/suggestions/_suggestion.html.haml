@@ -1,18 +1,27 @@
-%li.field
-  = suggestion.description
-  %em= suggestion.category
-  .offset1
-    == #{suggestion.likes.positives.count} Likes
-    == #{suggestion.likes.negatives.count} Dislikes
-    %br
+.well
+  .span5
+    %b=suggestion.title 
+  .span2
+    %em= suggestion.category
+  .div.span7
+    = suggestion.description
+  .span3
+    == #{suggestion.likes.positives.count} People AGREE
     - suggestion.likes.each do |like|
-      - comment = like.comment.empty? ? '***' : like.comment
+      - comment = like.comment.empty? ? 'YES!!!' : like.comment
       - if like.positive?
         %div{:style => 'color:green'}= comment
-      - else
+  .span3
+    == #{suggestion.likes.negatives.count} People DISAGREE
+    - suggestion.likes.each do |like|
+      - comment = like.comment.empty? ? 'YES!!!' : like.comment
+      - if !like.positive?
         %div{:style => 'color:red'}= comment
-  = form_tag like_suggestion_path(:id => suggestion.id, :property_id => property.id), :method => :put do
-    = label_tag :comment
-    = text_area_tag :comment, nil, :size => '60x4', :placeholder => 'Comment'
-    = submit_tag 'Like'
-    = submit_tag 'Dislike'
+  .span6.well
+    = form_tag like_suggestion_path(:id => suggestion.id, :property_id => property.id), :method => :put do
+      = text_area_tag :comment, nil, :size => '60x4', :placeholder => 'What do you think?'
+      %br
+      .span2
+        = submit_tag 'Agree'
+      .span2.pull-right
+        = submit_tag 'Disagree'
