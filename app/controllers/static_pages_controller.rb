@@ -33,4 +33,7 @@ class StaticPagesController < ApplicationController
   
   def stats
   end
+  
+  def about
+  end
 end
