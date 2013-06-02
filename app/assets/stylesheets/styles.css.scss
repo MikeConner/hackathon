@@ -241,6 +241,17 @@ input[type="color"].flat:focus,
   box-shadow:none;
 }
 
+
+
+
+.map_container {
+  max-width: none;
+  padding: 0;
+  width: 100%!important;
+  border-style:none;
+  box-shadow:none;
+}
+
 .gmaps4rails_map {
   width: 100%!important;
   min-height:100%;
@@ -252,7 +263,14 @@ input[type="color"].flat:focus,
   z-index: 5;
 }
 
-
+@media only screen and (max-width: 480px) {
+  .gmaps4rails_map {
+    min-height:320px!important;
+    height:320px;
+    position:relative;
+    top:0;
+  }
+}
 
 
 
@@ -301,6 +319,9 @@ input[type="color"].flat:focus,
     float: left;
   }
 }
+
+
+
 
 
 .property-row{
@@ -362,6 +383,78 @@ input[type="color"].flat:focus,
     }
 }
 
+
+@media only screen and (max-width: 480px) {
+.property-row{
+  display: block;
+  min-height: 120px;
+  background-color: white;
+  height:100%;
+  overflow: hidden;
+    .property-icon {
+      width:45px;
+      margin-right: 10px;
+      font-weight: bold;
+      font-size: 1.8em;
+    }
+    .value {
+      width:230px;
+      float: left;
+      margin-top: 35px;
+      margin-right: 20px;
+      display: inline-block;
+      .title {
+        color:#ddd;
+        display: block;
+        font-size: 1.1em;
+      }
+      .number {
+        color:#1fbba6;
+        display: block;
+        margin: 3px;
+        font-size: 1.8em;
+        font-weight: bold;
+      }
+    }
+    .infobox {
+      height:80px;
+      width:100%;
+      min-width:220px;
+      background-color:#39b6e5;
+      float: left;
+      .arrow-box {
+        height:80px;
+        background-color:#6fd0f4;
+        width:20px;
+        float:right;
+        position:relative;
+        z-index: 2;
+      }
+    .search {
+      float: left;
+    }
+      h3 {
+        color:white;
+        font-size:2em;
+        padding:-3px 0 0 30px;
+        line-height:1.2em;
+        display: inline-block;
+        float: left;
+      }
+    }
+}
+}
+
+
+@media only screen and (max-width: 480px) { 
+  .hide-mobile {
+    display:hidden;
+  }
+}
+
+.hide-mobile {
+  display:block;
+}
 
 .social-row {
   height: auto;
