@@ -1,7 +1,7 @@
 class Property < ActiveRecord::Base
   PARCEL_LEN = 20
   ADDRESS_LEN = 128
-  OWNER_LEN = 64
+  OWNER_LEN = 128
   
   attr_accessible :parcel_id, :address, :land_value, :building_value, :owner, :vacant, :taxes, :latitude, :longitude, :tax_category, :lot_area
   
