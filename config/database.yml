@@ -6,6 +6,7 @@
 
 development:
   adapter: postgresql
+  host: localhost
   database: hackathon_dev
   username: rails
   password: rails
