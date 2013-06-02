@@ -523,6 +523,11 @@ footer{display:hidden;}
   padding:10px 0px;
 }
 
+.todo-search {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
 /* Footer */
 
 .tags {margin-bottom:10px;}
@@ -601,6 +606,7 @@ footer{display:hidden;}
     margin-top: 0;
     font-size:1.5em;
     color:#1fbba6;
+    line-height: 22px;
   }
   .colorme {
     color:#ff6666;
