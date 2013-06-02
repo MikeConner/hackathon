@@ -63,7 +63,7 @@ function stickyFooter() {
 		var offset = window.innerHeight - document.body.offsetHeight;
 		var current = parseInt($(".bottom").css("margin-top"));
 		
-		if (current+offset > parseInt($("footer").css("margin-top"))) {
+		if (current+offset > parseInt($(".bottom").css("margin-top"))) {
 			$(".bottom").css({"margin-top":(current+offset)+"px"});
 		}
 	}
