@@ -1,0 +1,11 @@
+.field
+  = f.label :description
+  %br
+  = f.text_area :description, :size => '60x4'
+.field
+  = f.label :category
+  %br
+  = f.select :category, options_for_select(Suggestion::CATEGORIES, Suggestion::DEFAULT_CATEGORY)
+.field
+  = f.hidden_field :user_identifier, :value => request.remote_ip
+  = f.hidden_field :property_id, :value => @property.id

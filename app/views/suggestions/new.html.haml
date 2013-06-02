@@ -1,0 +1,14 @@
+.container
+  .row
+    %h1== Rescuing #{@property.address}
+    - if @property.suggestions.empty?
+      Be the first to make a suggestion!
+    - else
+      - @property.suggestions.each do |suggestion|
+        = render :partial => 'suggestion', :locals => { :suggestion => suggestion }
+    %h1 What do you suggest?
+    = form_for @suggestion do |f|
+      = render :partial => 'shared/error_messages', :locals => { :errors => @suggestion.errors, :name => 'Suggestion' }
+      = render :partial => 'suggestion_fields', :locals => { :f => f }
+      .actions
+        = f.submit 'Create Suggestion'

@@ -15,6 +15,12 @@
       %h3== Land: #{number_to_currency(@property.land_value)}
       %h3== Building: #{number_to_currency(@property.building_value)}
       %h3== Total: #{number_to_currency(@property.value)}
-      %h3== Taxes: #{number_to_currency(@property.taxes)}
-      %em== #{@property.lot_area} sq. feet
-      %center= link_to 'Rescue', rescue_property_path(@property), :class => 'btn btn-large'
+      - if !@property.taxes.nil?
+        %h3== Taxes: #{number_to_currency(@property.taxes)}
+      - if !@property.lot_area.nil?
+        %em== #{@property.lot_area} sq. feet
+      - if @can_rescue
+        %center= link_to 'Rescue', new_suggestion_path(:property_id => @property.id), :class => 'btn btn-large'
+      - else
+        %center
+          %em Thanks for rescuing this property!

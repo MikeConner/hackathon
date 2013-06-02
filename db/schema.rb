@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(:version => 20130602022352) do
     t.boolean  "vacant"
     t.decimal  "latitude"
     t.decimal  "longitude"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "tax_category"
     t.integer  "lot_area"
     t.string   "owner",          :limit => 128
