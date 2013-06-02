@@ -14,7 +14,7 @@
   .span3
     == #{suggestion.likes.negatives.count} People DISAGREE
     - suggestion.likes.each do |like|
-      - comment = like.comment.empty? ? 'YES!!!' : like.comment
+      - comment = like.comment.empty? ? 'NO!!!' : like.comment
       - if !like.positive?
         %div{:style => 'color:red'}= comment
   .span6.well

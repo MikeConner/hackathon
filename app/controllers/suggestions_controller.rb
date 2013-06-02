@@ -22,7 +22,7 @@ class SuggestionsController < ApplicationController
   
   def like
     @suggestion = Suggestion.find(params[:id])
-    @suggestion.likes.create(:comment => params[:comment], :user_identifier => request.remote_ip, :positive => 'Like' == params['commit'])
+    @suggestion.likes.create(:comment => params[:comment], :user_identifier => request.remote_ip, :positive => 'Agree' == params['commit'])
     
     redirect_to suggestions_path(:property_id => params[:property_id])
   end
