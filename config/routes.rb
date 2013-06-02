@@ -8,6 +8,8 @@ Hackathon::Application.routes.draw do
     put 'like', :on => :member
   end
   
+  match "/location" => "ajax#set_location", :via => :put
+  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
