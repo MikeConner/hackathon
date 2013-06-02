@@ -12,10 +12,7 @@ body, h1, h2, h3, h4, h5, h6 {
   padding:0 0 0 5px!important;
 }
 
-/* Map CSS */
-.map-frame {
-    
-}
+
 
 input:focus
 {
@@ -239,6 +236,8 @@ input[type="color"].flat:focus,
   width: 100%!important;
   height: 400px;
   position: relative;
+  border-style:none;
+  box-shadow:none;
 }
 
 .gmaps4rails_map {
@@ -261,7 +260,8 @@ input[type="color"].flat:focus,
 
 
 .search {
-
+  padding:35px 35px 0px 30px;
+  float: left;
   ::-webkit-input-placeholder { /* WebKit browsers */
     text-transform: uppercase;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
@@ -283,7 +283,6 @@ input[type="color"].flat:focus,
     font-weight: 300;
   }
   .home {
-    margin: 35px 55px 35px 35px;
     border:none;
     border-top:0;
     border-bottom:1px solid #efefef;
@@ -298,7 +297,7 @@ input[type="color"].flat:focus,
 
 .property-row{
   display: block;
-  height: 120px;
+  min-height: 120px;
     .property-icon {
       width:45px;
       margin-right: 10px;
