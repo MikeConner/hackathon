@@ -19,7 +19,8 @@ class Property < ActiveRecord::Base
   end
   
   validates :parcel_id, :presence => true,
-                        :length => { :maximum => PARCEL_LEN }
+                        :length => { :maximum => PARCEL_LEN },
+                        :uniqueness => true
   validates :address, :presence => true,
                       :length => { :maximum => ADDRESS_LEN }
   validates :land_value, :presence => true,

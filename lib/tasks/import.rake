@@ -12,15 +12,17 @@ namespace :db do
     
     CSV.foreach('/Users/Jeff/Documents/LotopiaData.csv', :headers => true) do |row|
       puts "Coding #{row['VACANTID']}"
-      sleep 1
-      tax = row['TaxDesc'] =~ /.*- (.*)/ ? $1 : nil
-      geocode = geocode_address(row['Location'])
-      latitude = geocode.nil? ? nil : geocode['lat']
-      longitude = geocode.nil? ? nil : geocode['lng']
-      
-      Property.create!(:parcel_id => row['VACANTID'], :owner => row['Owner_ACAD'], :land_value => row['Land Value'],
-                       :building_value => row['Building Value'], :vacant => true, :address => 'Location',
-                       :tax_category => tax, :latitude => latitude, :longitude => longitude)
+      if Property.find_by_parcel_id(row['VACANTID']).nil?
+        sleep 1
+        tax = row['TaxDesc'] =~ /.*- (.*)/ ? $1 : nil
+        geocode = geocode_address(row['Location'])
+        latitude = geocode.nil? ? nil : geocode['lat']
+        longitude = geocode.nil? ? nil : geocode['lng']
+        
+        Property.create!(:parcel_id => row['VACANTID'], :owner => row['Owner_ACAD'], :land_value => row['Land Value'],
+                         :building_value => row['Building Value'], :vacant => true, :address => 'Location',
+                         :tax_category => tax, :latitude => latitude, :longitude => longitude)
+      end
     end
   end
 end
