@@ -723,8 +723,7 @@ h6 {
 .navbar .brand {
   background-color: #1abc9c;
   color: #ffffff;
-  padding-left: 9px;
-  padding-right: 9px;
+  padding: 10px 35px 10px!important;
 }
 .navbar .brand:hover,
 .navbar .brand:focus {
@@ -903,7 +902,7 @@ h6 {
 }
 .navbar-inner {
   background: #eceef0;
-  border: none;
+  border: 0!important;
   padding-left: 0;
   padding-right: 0;
   -webkit-border-radius: 0!important;
