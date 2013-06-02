@@ -6,6 +6,8 @@ class Property < ActiveRecord::Base
   attr_accessible :parcel_id, :address, :land_value, :building_value, :owner, :vacant, :taxes, :latitude, :longitude, :tax_category, :lot_area
   
   acts_as_gmappable :process_geocoding => false
+  geocoded_by :address
+  
   
   has_many :burdens, :dependent => :destroy
   has_many :suggestions, :dependent => :destroy

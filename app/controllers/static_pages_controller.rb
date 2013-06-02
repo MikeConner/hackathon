@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @map_data = Property.select { |p| p.mappable? }.to_gmaps4rails do |property, marker|
+    @map_data = Property.near([40.441783, -80.000117],0.5).to_gmaps4rails do |property, marker|
       marker.infowindow render_to_string(:partial => "infowindow", :locals => { :property => property})
       marker.title "#{property.address}"
       #marker.json({ :owner => property.owner, :category => property.tax_category})

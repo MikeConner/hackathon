@@ -8,7 +8,7 @@ gem 'rails', '3.2.13'
 gem 'pg', '0.15.1'
 gem 'taps', '0.3.24'
 gem 'gmaps4rails', '1.5.6'
-
+gem 'geocoder'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
