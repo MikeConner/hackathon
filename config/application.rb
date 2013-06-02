@@ -52,7 +52,7 @@ module Hackathon
     # in your app. As such, your models will need to explicitly whitelist or blacklist accessible
     # parameters by using an attr_accessible or attr_protected declaration.
     config.active_record.whitelist_attributes = true
-
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     # Enable the asset pipeline
     config.assets.enabled = true
     # Suppress 304 errors; turn on if we ever have real asset issues
