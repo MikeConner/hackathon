@@ -30,4 +30,7 @@ class StaticPagesController < ApplicationController
   
   def income
   end
+  
+  def stats
+  end
 end

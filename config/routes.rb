@@ -13,6 +13,7 @@ Hackathon::Application.routes.draw do
   match "/points" => "static_pages#points"
   match "/delinquent" => "static_pages#delinquent"
   match "/income" => "static_pages#income"
+  match "/stats" => "static_pages#stats"
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
