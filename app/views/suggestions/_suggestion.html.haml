@@ -1,27 +1,37 @@
-.well
-  .span5
-    %b=suggestion.title 
-  .span2
-    %em= suggestion.category
-  .div.span7
-    = suggestion.description
-  .span3
-    == #{suggestion.likes.positives.count} People AGREE
-    - suggestion.likes.each do |like|
-      - comment = like.comment.empty? ? 'YES!!!' : like.comment
-      - if like.positive?
-        %div{:style => 'color:green'}= comment
-  .span3
-    == #{suggestion.likes.negatives.count} People DISAGREE
-    - suggestion.likes.each do |like|
-      - comment = like.comment.empty? ? 'NO!!!' : like.comment
-      - if !like.positive?
-        %div{:style => 'color:red'}= comment
-  .span6.well
+.span12
+  %h1= suggestion.category
+  %h4= suggestion.description
+.span4
+  .todo.mrm
+    .todo-search
+      == #{suggestion.likes.positives.count} People AGREE
+    %ul
+      %li.todo-done{:style => 'background:#3fdcbd;'}
+        .todo-content
+          %h4.todo-name
+            - suggestion.likes.each do |like|
+              - comment = like.comment.empty? ? 'YES!!!' : like.comment
+              - if like.positive?
+                %div{:class => 'item'}= comment
+.span4
+  .todo.mrm
+    .todo-search{:style => 'background:#e74c3c;'}
+      == #{suggestion.likes.negatives.count} People DISAGREE 
+    %ul
+      %li.todo-done{:style => 'background:#f57163;'}
+        .todo-content
+          %h4.todo-name
+            - suggestion.likes.each do |like|
+              - comment = like.comment.empty? ? 'NO!!!' : like.comment
+              - if !like.positive?
+                %div{:class => 'item'}= comment
+
+.span12
+  .well
     = form_tag like_suggestion_path(:id => suggestion.id, :property_id => property.id), :method => :put do
-      = text_area_tag :comment, nil, :size => '60x4', :placeholder => 'What do you think?'
+      = text_area_tag :comment, nil, :size => '60x4', :placeholder => 'What do you think?', :class => 'enlarge!'
       %br
+      .span2{:style => 'margin-left:0!important;'}
+        = submit_tag 'Agree', :class => 'btn btn-primary', :style => 'width:100% !important; margin-left:0!important;'
       .span2
-        = submit_tag 'Agree'
-      .span2.pull-right
-        = submit_tag 'Disagree'
+        = submit_tag 'Disagree', :class => 'btn btn-danger', :style => 'width:100% !important;'

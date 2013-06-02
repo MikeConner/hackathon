@@ -2905,16 +2905,7 @@ textarea[class*="span"] {
   color: #2c3e50;
   padding: 19px 25px 20px;
 }
-.todo-search:before {
-  position: absolute;
-  font-family: 'Flat-UI-Icons';
-  content: "\e01c";
-  font-size: 16px;
-  display: inline-block;
-  top: 50%;
-  left: 92%;
-  margin: -0.5em 0 0 -1em;
-}
+
 input.todo-search-field {
   background: none;
   border: none;
@@ -2952,17 +2943,7 @@ input.todo-search-field.placeholder {
   font-size: 17px;
   margin: 1px 0 3px;
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 2) {
-  .todo li {
-    background-image: url(../images/todo/todo-2x.png);
-  }
-  .todo li.todo-done {
-    background-image: url(../images/todo/done-2x.png);
-  }
-  .todo-search {
-    background-image: url(../images/todo/search-2x.png);
-  }
-}
+
 footer {
   background-color: #edeff1;
   color: #bac1c8;

@@ -256,6 +256,15 @@ footer{display:hidden;}
 }
 
 @media only screen and (max-width: 480px) {
+  .map_container {
+    max-width: none;
+    padding: 0;
+    width: 100%!important;
+    border-style:none;
+    box-shadow:none;
+    height:320px;
+    img {max-width:none;}
+  }
   .gmaps4rails_map {
     min-height:320px!important;
     height:320px;
@@ -414,6 +423,8 @@ footer{display:hidden;}
       min-width:220px;
       background-color:#39b6e5;
       float: left;
+
+
       .arrow-box {
         height:80px;
         background-color:#6fd0f4;
@@ -428,19 +439,43 @@ footer{display:hidden;}
       h3 {
         color:white;
         font-size:2em;
-        padding:-3px 0 0 30px;
+        margin:-12px 0px 0px -35px;
         line-height:1.2em;
         display: inline-block;
         float: left;
       }
     }
+  }
 }
-}
+
+
 
 
 @media only screen and (max-width: 480px) { 
   .hide-mobile {
     display:hidden;
+  }
+  .search {
+    padding:35px 35px 0 13px;
+    .home {
+      font-size:1.5em;
+      padding:30px 15px;
+    }
+  }
+  .value {
+      padding:0 0 0 20px;
+    }
+  .property-row {
+    margin-bottom: 40px;
+  }
+  .tags {
+    padding: 0px 20px;
+  }
+  .service {
+    padding:25px;
+  }
+  .property-img {
+    margin-bottom: 25px;
   }
 }
 
@@ -483,7 +518,10 @@ footer{display:hidden;}
 
 
 
-
+.todo-name .item{
+  color:white;
+  padding:10px 0px;
+}
 
 /* Footer */
 
@@ -662,6 +700,14 @@ footer hr {
 }
 
 
+
+.well {overflow:hidden;}
+
+.suggestion input, .suggestion textarea, .suggestion .uneditable-input .enlarge {
+  width:98%!important;
+  margin-top: 10px;
+
+}
 
 .row-fluid .clear-margin {
 	margin:0px!important;

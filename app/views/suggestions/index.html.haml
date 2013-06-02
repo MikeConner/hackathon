@@ -1,9 +1,13 @@
-.container
+.container-fluid
+  .row.suggestion
+    .span12
+      %br
+      %h1== Ideas Submitted to Rescue #{@property.address}
+      %h2 Rate them, or give us feedback
+  .row.suggestion
+    - @property.suggestions.each do |suggestion|
+      = render :partial => 'suggestion', :locals => { :suggestion => suggestion, :property => @property }
   .row
-    %h1== Ideas Submitted to Rescue #{@property.address}
-    %h3 Rate them, or give us feedback
-    .span8
-      - @property.suggestions.each do |suggestion|
-        = render :partial => 'suggestion', :locals => { :suggestion => suggestion, :property => @property }
-  .row
-    %center= link_to 'Back to property', property_path(@property)
+    .span12
+      %br
+      = link_to 'Back to property', property_path(@property), :class => 'btn btn-inverse btn-large'

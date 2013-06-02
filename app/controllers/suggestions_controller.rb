@@ -10,7 +10,7 @@ class SuggestionsController < ApplicationController
     if @suggestion.save
       redirect_to root_path, notice: 'Thank you for your suggestion!'
     else
-      @property = Property.find(params[:property_id])
+      @property = Property.find(params[:suggestion][:property_id])
       render 'new'
     end
   end
