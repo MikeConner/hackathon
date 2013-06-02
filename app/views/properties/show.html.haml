@@ -22,5 +22,4 @@
       - if @can_rescue
         %center= link_to 'Rescue', new_suggestion_path(:property_id => @property.id), :class => 'btn btn-large'
       - else
-        %center
-          %em Thanks for rescuing this property!
+        %center= link_to 'Show Progress', suggestions_path(:property_id => @property.id), :class => 'btn btn-large'

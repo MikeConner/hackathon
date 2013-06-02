@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130602022352) do
+ActiveRecord::Schema.define(:version => 20130602072422) do
 
   create_table "burdens", :force => true do |t|
     t.integer  "property_id"
@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(:version => 20130602022352) do
     t.integer  "suggestion_id"
     t.string   "user_identifier"
     t.text     "comment"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.boolean  "positive",        :default => true, :null => false
   end
 
   create_table "properties", :force => true do |t|

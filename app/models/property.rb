@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: properties
+#
+#  id             :integer         not null, primary key
+#  parcel_id      :string(20)
+#  address        :string(128)
+#  land_value     :integer
+#  building_value :integer
+#  taxes          :integer
+#  vacant         :boolean
+#  latitude       :decimal(, )
+#  longitude      :decimal(, )
+#  created_at     :datetime
+#  updated_at     :datetime
+#  tax_category   :string(255)
+#  lot_area       :integer
+#  owner          :string(128)
+#
+
 class Property < ActiveRecord::Base
   PARCEL_LEN = 20
   ADDRESS_LEN = 128

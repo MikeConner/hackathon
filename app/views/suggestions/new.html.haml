@@ -4,8 +4,9 @@
     - if @property.suggestions.empty?
       Be the first to make a suggestion!
     - else
-      - @property.suggestions.each do |suggestion|
-        = render :partial => 'suggestion', :locals => { :suggestion => suggestion }
+      %ul
+        - @property.suggestions.each do |suggestion|
+          = render :partial => 'suggestion', :locals => { :suggestion => suggestion, :property => @property }
     %h1 What do you suggest?
     = form_for @suggestion do |f|
       = render :partial => 'shared/error_messages', :locals => { :errors => @suggestion.errors, :name => 'Suggestion' }

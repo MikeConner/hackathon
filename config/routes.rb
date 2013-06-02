@@ -4,8 +4,10 @@ Hackathon::Application.routes.draw do
   root :to => 'static_pages#home'
 
   resources :properties
-  resources :suggestions
-    
+  resources :suggestions do
+    put 'like', :on => :member
+  end
+  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
