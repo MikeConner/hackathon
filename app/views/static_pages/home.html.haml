@@ -1,13 +1,25 @@
 = gmaps4rails(@map_data)
-
-
 .property-row
   .infobox
     %h3 Property <br/>Information
     .arrow-box
       %i.icon-chevron-sign-right
   .search
-    %input.span3{:placeholder => "Enter your location", :type => "text"}/
+    %input.span3.home{:placeholder => "Enter your location", :type => "text"}/
+  .value
+    = image_tag 'scout-icon.png', {:class => 'property-icon pull-left'}
+    .number 28
+    .title Available to Scout
+  .value
+    = image_tag 'building-icon.png', {:class => 'property-icon pull-left'}
+    .number 2,600
+    .title Properties Rescued
+  .value
+    = image_tag 'money-icon.png', {:class => 'property-icon pull-left'}
+    .number 423.00
+    .title Property Value
+.social-row
+  &nbsp;
 
 
 
@@ -15,7 +27,7 @@
 
 -#// Application
   .row-fluid.clear-margin
-    .span3.property-infobox
+    .span4.property-infobox
       %h3 Property <br/>Information
       .arrow-box
         %i.icon-chevron-sign-right
