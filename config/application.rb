@@ -57,7 +57,7 @@ module Hackathon
     config.assets.enabled = true
     # Suppress 304 errors; turn on if we ever have real asset issues
     config.assets.logger = false
-
+    config.assets.initialize_on_precompile = false
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.2'
   end
