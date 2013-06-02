@@ -1,8 +1,8 @@
 .container
   .row
-    %h1== Rescuing #{@property.address}
-    %h3 Suggestions
-    %ul
+    %h1== Ideas Submitted to Rescue #{@property.address}
+    %h3 Rate them, or give us feedback
+    .span8
       - @property.suggestions.each do |suggestion|
         = render :partial => 'suggestion', :locals => { :suggestion => suggestion, :property => @property }
   .row

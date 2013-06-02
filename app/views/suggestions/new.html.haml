@@ -1,15 +1,16 @@
 .container
   .row
-    %h1== Rescuing #{@property.address}
+    %h1== The First Step: Rescue this property with your IDEA
+    %h2== Address: #{@property.address}
     - if @property.suggestions.empty?
-      Be the first to make a suggestion!
+      You are the first one here!  This is the first idea being pitched to the community.  Make it a good one!
     - else
       %ul
         - @property.suggestions.each do |suggestion|
           = render :partial => 'suggestion', :locals => { :suggestion => suggestion, :property => @property }
-    %h1 What do you suggest?
+    %h1 What would you do with this real estate?
     = form_for @suggestion do |f|
       = render :partial => 'shared/error_messages', :locals => { :errors => @suggestion.errors, :name => 'Suggestion' }
       = render :partial => 'suggestion_fields', :locals => { :f => f }
       .actions
-        = f.submit 'Create Suggestion'
+        = f.submit 'Share your Idea'
