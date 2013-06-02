@@ -31,6 +31,7 @@ class Property < ActiveRecord::Base
   
   has_many :burdens, :dependent => :destroy
   has_many :suggestions, :dependent => :destroy
+  has_many :likes, :through => :suggestions
   
   def gmaps4rails_address
     self.address

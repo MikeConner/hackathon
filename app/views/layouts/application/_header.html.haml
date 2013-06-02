@@ -2,6 +2,15 @@
   .navbar-inner
     .container
       = link_to(image_tag('logo.png', :class => "brand active", :alt => "logo"), root_path)
+      .nav-collapse.collapse.navbar-inverse-collapse
+        %ul.nav
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              Research
+              %b.caret
+            %ul.dropdown-menu
+              %li= link_to 'Delinquent', delinquent_path
+              %li= link_to 'Income/Demographics', income_path
       -#.nav-collapse.collapse.navbar-inverse-collapse
         %ul.nav
           %li

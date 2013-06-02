@@ -10,6 +10,9 @@ Hackathon::Application.routes.draw do
   
   match "/location" => "ajax#set_location", :via => :put
   match "/geocode" => "ajax#geocode", :via => :put
+  match "/points" => "static_pages#points"
+  match "/delinquent" => "static_pages#delinquent"
+  match "/income" => "static_pages#income"
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
