@@ -8,15 +8,18 @@
     %input.span3.home{:placeholder => "Enter your location", :type => "text"}/
   .value
     = image_tag 'scout-icon.png', {:class => 'property-icon pull-left'}
-    .number 28
+    .number
+      = @properties.count
     .title Available to Scout
   .value
     = image_tag 'building-icon.png', {:class => 'property-icon pull-left'}
-    .number 2,600
+    .number
+      = @rescues
     .title Properties Rescued
   .value
     = image_tag 'money-icon.png', {:class => 'property-icon pull-left'}
-    .number 423.00
+    .number
+      = @prop_value
     .title Property Value
 .social-row
   &nbsp;

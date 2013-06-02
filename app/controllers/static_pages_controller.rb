@@ -1,6 +1,11 @@
 class StaticPagesController < ApplicationController
   def home
-    @map_data = Property.near([40.441783, -80.000117],0.5).to_gmaps4rails do |property, marker|
+    @properties = Property.near([40.441783, -80.000117],0.5).geocoded
+    @rescues = Burden.count
+    @land_values = Property.near([40.441783, -80.000117],0.5).geocoded.sum(:land_value)
+    @build_values =  Property.near([40.441783, -80.000117],0.5).geocoded.sum(:building_value)
+    @prop_value = @land_values.to_f + @build_values.to_f
+    @map_data = @properties.to_gmaps4rails do |property, marker|
       marker.infowindow render_to_string(:partial => "infowindow", :locals => { :property => property})
       marker.title "#{property.address}"
       #marker.json({ :owner => property.owner, :category => property.tax_category})
