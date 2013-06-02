@@ -4,7 +4,7 @@
 .span4
   .todo.mrm
     .todo-search
-      == #{suggestion.likes.positives.count} People AGREE
+      == #{pluralize(suggestion.likes.positives.count, 'Person')} AGREED
     %ul
       %li.todo-done{:style => 'background:#3fdcbd;'}
         .todo-content
@@ -16,7 +16,7 @@
 .span4
   .todo.mrm
     .todo-search{:style => 'background:#e74c3c;'}
-      == #{suggestion.likes.negatives.count} People DISAGREE 
+      == #{pluralize(suggestion.likes.negatives.count, 'Person')} DISAGREED
     %ul
       %li.todo-done{:style => 'background:#f57163;'}
         .todo-content
