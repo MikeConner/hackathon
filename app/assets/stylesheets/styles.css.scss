@@ -622,6 +622,34 @@ footer{display:hidden;}
 }
 
 
+@media only screen and (max-width: 1340px) {
+  .value {
+    width:200px!important;
+    margin-right: 5px!important;
+  }
+  .search {
+    padding:35px 30px 0px 20px!important;
+  }
+}
+
+@media only screen and (max-width: 1225px) {
+  .property-row {
+    min-height: 150px!important;
+  }
+  .infobox, .arrow-box {
+    height: 150px!important;
+    h3 {padding:20px 0 20px 40px;}
+  }
+  .search {
+    .home {width:80%!important;}
+    .span3 {width:80%!important;}
+    padding:10px 30px 0px 20px !important;
+    display: block!important;
+    width: 65% !important;
+  }
+  .value {margin-left:20px!important; margin-top:15px!important;}
+}
+
 .bottom {
   position:relative;
   z-index: 20;
