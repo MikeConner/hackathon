@@ -1,4 +1,36 @@
-%h3
-  = link_to property.parcel_id, property_path(property)
-%em= property.tax_category
-= number_to_currency(property.value)
+.span3
+  %h4
+    = property.address
+  %b 
+    Owner:
+    = property.owner
+  %ul.icons
+    %li
+      %span Lot:
+      %span= property.parcel_id
+    %li
+      - if property.vacant?
+        %em Vacant
+      - else
+        %em Occupied
+    %li
+      %span== Land: #{number_to_currency(property.land_value)}
+    %li
+      %span== Building: #{number_to_currency(property.building_value)}
+    %li
+      == Total: #{number_to_currency(property.value)}
+      - if !property.taxes.nil?
+        == Taxes: #{number_to_currency(property.taxes)}
+      - if !property.lot_area.nil?
+        == #{@property.lot_area} sq. feet
+  %ul.icons
+    %li
+      Tax Status:
+      = property.tax_category
+
+.span3
+  .property-img
+  -#= image_tag 'http://25.media.tumblr.com/tumblr_m66xhfpafY1rutx6lo1_500.jpg'
+  = image_tag "http://photos.county.allegheny.pa.us/iasworld/iDoc2/Services/GetPhoto.ashx?parid=#{property.parcel_id}&jur=002", :size => '200x200', :alt => "No Picture"
+  = link_to 'Rescue', new_suggestion_path(:property_id => property.id), :class => 'btn  btn-danger'
+  = link_to 'Show Progress', suggestions_path(:property_id => property.id), :class => 'btn  btn-success'

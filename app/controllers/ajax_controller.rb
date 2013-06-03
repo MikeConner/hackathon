@@ -5,13 +5,25 @@ class AjaxController < ApplicationController
   def set_location
     session[:latitude] = params[:latitude]
     session[:longitude] = params[:longitude]
+    session[:game] = 'on'
 
     respond_to do |format|
-      format.html { redirect_to root_path }
+      format.html { redirect_to root_path  }
       format.js { render :js => "window.location.href = \"#{root_path}\"" }
     end
   end
 
+  def game_off
+    session[:latitude] = params[:latitude]
+    session[:longitude] = params[:longitude]
+    session[:game] = 'off'
+
+    respond_to do |format|
+      format.html { redirect_to root_path  }
+      format.js { render :js => "window.location.href = \"#{root_path}\"" }
+    end
+  end
+  
   def geocode
     location = geocode_address(params['code'])
     if location.nil?

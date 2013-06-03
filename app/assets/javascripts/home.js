@@ -1,31 +1,59 @@
 $(function() {
      // Handler for .ready() called.
-  function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    }
-    else {
-        alert("Geolocation is not supported by this browser.");
-    }
-  }
-  
+  $('#gametime').click(function(){
+    if ($('#gametime').text() == "Game Mode: Off")
+    {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
 
+        }
+        else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+    else
+    {
+      $('#gametime').text("Game Mode: Off");
+
+        jQuery.ajax({url:"/gameoff",
+                     data: "",
+                     type: "PUT",
+                     // Don't need to do anything on success
+                     error: function(xhr, ajaxOptions, thrownError) //{ alert('Oh noes!') },
+                       { alert('error code: ' + xhr.status + ' \n'+'error:\n' + thrownError ); },
+                     async: false
+        });      
+    }
+
+
+  })
+  
 
   function showPosition(position) {
     //alert("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude); 
-	data_obj = {"latitude": position.coords.latitude, "longitude": position.coords.longitude }
-	
-	jQuery.ajax({url:"/location",
-	             data: data_obj,
-		         type: "PUT",
-		         // Don't need to do anything on success
-	             error: function(xhr, ajaxOptions, thrownError) //{ alert('Oh noes!') },
-	               { alert('error code: ' + xhr.status + ' \n'+'error:\n' + thrownError ); },
-	             async: false
-	});
+	data_obj = {"latitude": position.coords.latitude, "longitude": position.coords.longitude  }
+
+    if ( position.coords.latitude > 40.2 && position.coords.latitude < 40.6 && position.coords.longitude > -80.2 && position.coords.longitude < -79.7  ){
+    	jQuery.ajax({url:"/location",
+    	             data: data_obj,
+    		         type: "PUT",
+    		         // Don't need to do anything on success
+    	             error: function(xhr, ajaxOptions, thrownError) //{ alert('Oh noes!') },
+    	               { alert('error code: ' + xhr.status + ' \n'+'error:\n' + thrownError ); },
+    	             async: false
+    	});
+     $('#gametime').text("Game Mode: ON");
+     $('#location_entry').val( position.coords.latitude + ", " + position.coords.longitude);
+
+
+    }
+    else
+    {
+        $('#gametime').text("Game Mode: NO DATA near" + position.coords.latitude + ", " + position.coords.longitude );
+    }
+
   }
 
-  getLocation();
   
   var code = $('#geolocation');
   if (code.length > 0) {

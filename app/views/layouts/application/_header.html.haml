@@ -13,6 +13,13 @@
               %li= link_to 'Income/Demographics', income_path
               %li= link_to 'Statistics', stats_path
           %li= link_to 'About', about_path
+          %li
+            - if @game_mode
+              = link_to 'Game Mode: ON', "", :id => "gametime"
+            - else
+              = link_to 'Game Mode: Off', "", :id => "gametime"
+          %li
+            = session['game']
       -#.nav-collapse.collapse.navbar-inverse-collapse
         %ul.nav
           %li
