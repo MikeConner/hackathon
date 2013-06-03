@@ -4,8 +4,7 @@ $(function() {
     if ($('#gametime').text() == "Game Mode: Off")
     {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-
+             navigator.geolocation.getCurrentPosition(showPosition,errorCallback,{timeout:10000});
         }
         else {
             alert("Geolocation is not supported by this browser.");
@@ -24,15 +23,16 @@ $(function() {
                      async: false
         });      
     }
-
-
   })
   
+  function errorCallback(){
+
+    alert("Geolocation error!");
+  }
 
   function showPosition(position) {
     //alert("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude); 
 	data_obj = {"latitude": position.coords.latitude, "longitude": position.coords.longitude  }
-
     if ( position.coords.latitude > 40.2 && position.coords.latitude < 40.6 && position.coords.longitude > -80.2 && position.coords.longitude < -79.7  ){
     	jQuery.ajax({url:"/location",
     	             data: data_obj,
@@ -42,9 +42,8 @@ $(function() {
     	               { alert('error code: ' + xhr.status + ' \n'+'error:\n' + thrownError ); },
     	             async: false
     	});
-     $('#gametime').text("Game Mode: ON");
-     $('#location_entry').val( position.coords.latitude + ", " + position.coords.longitude);
-
+         $('#gametime').text("Game Mode: ON");
+        $('#location_entry').val( position.coords.latitude + ", " + position.coords.longitude);
 
     }
     else

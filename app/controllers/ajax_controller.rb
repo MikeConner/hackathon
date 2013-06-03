@@ -14,8 +14,6 @@ class AjaxController < ApplicationController
   end
 
   def game_off
-    session[:latitude] = params[:latitude]
-    session[:longitude] = params[:longitude]
     session[:game] = 'off'
 
     respond_to do |format|

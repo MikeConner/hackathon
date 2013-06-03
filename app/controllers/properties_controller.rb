@@ -2,7 +2,14 @@ class PropertiesController < ApplicationController
   DEFAULT_LAT = 40.441783
   DEFAULT_LONG = -80.000117
 
-  def show 
+  def show
+
+    if session[:game] == 'on'
+      @game_mode = true
+    else
+      @game_mode = false
+    end
+
     radius = 0.4
     latitude = session[:latitude].nil? ? DEFAULT_LAT : session[:latitude]
     longitude = session[:longitude].nil? ? DEFAULT_LONG : session[:longitude]

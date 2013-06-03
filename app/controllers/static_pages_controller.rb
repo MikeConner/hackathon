@@ -21,7 +21,7 @@ class StaticPagesController < ApplicationController
       longitude =  DEFAULT_LONG 
     end    
 
-    @properties = Property.near([latitude, longitude],radius).geocoded
+    @properties = Property.near([latitude, longitude],radius).geocoded.limit(300)
     @land_values = Property.near([latitude, longitude],radius).geocoded.sum(:land_value)
     @build_values =  Property.near([latitude, longitude],radius).geocoded.sum(:building_value)
 
