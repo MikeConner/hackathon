@@ -2,20 +2,20 @@
   .row.suggestion
     .span12
       %br
-      %h1== The First Step: Rescue this property with your IDEA
+      %h1== How would you like to see this property used?
       %h2== Address: #{@property.address}
       - if @property.suggestions.empty?
-        You are the first one here!  This is the first idea being pitched to the community.  Make it a good one!
+        .well 
+          %h4 You are the first one here!  This is the first idea being pitched to the community.  Make it a good one!
       - else
         %ul
           - @property.suggestions.each do |suggestion|
             = render :partial => 'suggestion', :locals => { :suggestion => suggestion, :property => @property }
     .span12
       %br
-      %br
-      %h1 What would you do with this real estate?
+      %h1 What would you like to see in this space?
       = form_for @suggestion do |f|
         = render :partial => 'shared/error_messages', :locals => { :errors => @suggestion.errors, :name => 'Suggestion' }
         = render :partial => 'suggestion_fields', :locals => { :f => f }
         .actions
-          = f.submit 'Share your Idea', :class => 'btn btn-primary'
+          = f.submit 'Share your Idea', :class => 'btn btn-primary', :style => "width: 100% !important"
