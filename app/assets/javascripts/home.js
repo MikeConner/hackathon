@@ -1,7 +1,7 @@
 $(function() {
      // Handler for .ready() called.
   $('#gametime').click(function(){
-    if ($('#gametime').text() == "Game Mode: Off")
+    if ($('#gametime').text() == "Game: Off")
     {
         if (navigator.geolocation) {
              navigator.geolocation.getCurrentPosition(showPosition,errorCallback,{timeout:10000});
@@ -12,7 +12,7 @@ $(function() {
     }
     else
     {
-      $('#gametime').text("Game Mode: Off");
+      $('#gametime').text("Game: Off");
 
         jQuery.ajax({url:"/gameoff",
                      data: "",
@@ -42,7 +42,7 @@ $(function() {
     	               { alert('error code: ' + xhr.status + ' \n'+'error:\n' + thrownError ); },
     	             async: false
     	});
-         $('#gametime').text("Game Mode: ON");
+         $('#gametime').text("Game: ON");
         $('#location_entry').val( position.coords.latitude + ", " + position.coords.longitude);
 
     }
