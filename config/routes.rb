@@ -16,7 +16,8 @@ Hackathon::Application.routes.draw do
   match "/income" => "static_pages#income"
   match "/stats" => "static_pages#stats"
   match "/about" => "static_pages#about"
-  
+  match "/impact" => "static_pages#impact"
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

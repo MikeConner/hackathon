@@ -1,0 +1,4 @@
+.container
+  - @impacts.each do |impact|
+    .row
+      = render :partial => "infowindow", :locals => { :property => impact.property }

@@ -38,6 +38,11 @@ class StaticPagesController < ApplicationController
     end  
   end
   
+  def impact
+        @impacts = Suggestion.select("count(*) as cnt, property_id").where("property_id is not null").group("property_id").order("cnt")
+    #@impacts = Suggestion.group(:property_id).having("count(*)>0").count
+  end
+
   def points   
   end
   
