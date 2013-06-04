@@ -34,3 +34,7 @@
   = image_tag "http://photos.county.allegheny.pa.us/iasworld/iDoc2/Services/GetPhoto.ashx?parid=#{property.parcel_id}&jur=002", :size => '200x200', :alt => "No Picture"
   = link_to 'Rescue', new_suggestion_path(:property_id => property.id), :class => 'btn  btn-danger'
   = link_to 'Show Progress', suggestions_path(:property_id => property.id), :class => 'btn  btn-success'
+  %br
+  .well
+    == #{property.burdens.count} Rescues : 
+    == #{property.suggestions.count} Ideas
