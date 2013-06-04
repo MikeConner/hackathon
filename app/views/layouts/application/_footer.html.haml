@@ -7,8 +7,9 @@
           .arrow-box
             %i.icon-chevron-sign-right
         .search
-          - if !session[:latitude].nil? localtxt = session[:latitude].to_s + ", " + session[:longitude].to_s
-          %input.span3.home#location_entry{:text => "Location", :type => "text", :placeholder => localtext}
+          - if !session[:latitude].nil? 
+            - localtxt = session[:latitude].to_s + ", " + session[:longitude].to_s
+          %input.span3.home#location_entry{:text => "Location", :type => "text", :placeholder => localtxt}
         .value
           = image_tag 'scout-icon.png', {:class => 'property-icon pull-left'}
           .number
