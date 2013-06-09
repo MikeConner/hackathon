@@ -20,7 +20,8 @@ class Like < ActiveRecord::Base
   scope :positives, where("positive = #{ActiveRecord::Base.connection.quoted_true}")           
   scope :negatives, where("positive = #{ActiveRecord::Base.connection.quoted_false}")           
 
-  validates_presence_of :user_identifier
+  validates :user_identifier, :presence => true,
+                              :uniqueness => { :message => 'You cannot agree/disagree with a suggestion more than once' }
   validates_inclusion_of :positive, :in => [true, false]
   validate :cannot_like_your_own_idea
   
