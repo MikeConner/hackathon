@@ -5,6 +5,7 @@
       %h1== Redevelopment Ideas: #{@property.address}
       %h2 Rate them, or give us feedback
   .row.suggestion
+    = render :partial => 'shared/flash_messages'
     - @property.suggestions.each do |suggestion|
       = render :partial => 'suggestion', :locals => { :suggestion => suggestion, :property => @property }
   .row

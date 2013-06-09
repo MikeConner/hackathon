@@ -36,5 +36,6 @@
   = link_to 'Show Progress', suggestions_path(:property_id => property.id), :class => 'btn  btn-success'
   %br
   .well
-    == #{property.burdens.count} Rescues : 
-    == #{property.suggestions.count} Ideas
+    = pluralize(property.burdens.count, 'Rescue')
+    \: 
+    = pluralize(property.suggestions.count, 'Idea')

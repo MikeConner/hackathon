@@ -1,10 +1,6 @@
 class SuggestionsController < ApplicationController
   def new
-    if session[:game] == 'on'
-      @game_mode = true
-    else
-      @game_mode = false
-    end
+    @game_mode = 'on' == session[:game]
 
     @suggestion = Suggestion.new
     @property = Property.find(params[:property_id])
@@ -12,11 +8,7 @@ class SuggestionsController < ApplicationController
   end
   
   def create
-        if session[:game] == 'on'
-      @game_mode = true
-    else
-      @game_mode = false
-    end
+    @game_mode = 'on' == session[:game]
 
     @suggestion = Suggestion.new(params[:suggestion])
     if @suggestion.save
@@ -28,27 +20,23 @@ class SuggestionsController < ApplicationController
   end
   
   def index
-        if session[:game] == 'on'
-      @game_mode = true
-    else
-      @game_mode = false
-    end
-
+    @game_mode = 'on' == session[:game]
+    
     @property = Property.find(params[:property_id])
     @suggestions = @property.suggestions
   end
   
   def like
-        if session[:game] == 'on'
-      @game_mode = true
-    else
-      @game_mode = false
-    end
+    @game_mode = 'on' == session[:game]
 
     @suggestion = Suggestion.find(params[:id])
-    @suggestion.likes.create(:comment => params[:comment], :user_identifier => request.remote_ip, :positive => 'Agree' == params['commit'])
+    like = @suggestion.likes.create(:comment => params[:comment], :user_identifier => request.remote_ip, :positive => 'Agree' == params['commit'])
+   
+    like.errors.each do |attr, msg|
+      flash[:alert] = '' if flash[:alert].nil?
+      flash[:alert] += "#{msg}  "
+    end
     
     redirect_to suggestions_path(:property_id => params[:property_id])
-    #redirect_to points_path, notice: 'Thank you for your opinion!'
   end
 end

@@ -22,4 +22,12 @@ class Like < ActiveRecord::Base
 
   validates_presence_of :user_identifier
   validates_inclusion_of :positive, :in => [true, false]
+  validate :cannot_like_your_own_idea
+  
+private
+  def cannot_like_your_own_idea
+    if self.suggestion.user_identifier == self.user_identifier
+      self.errors.add(:base, 'Sorry; you cannot like your own idea')
+    end
+  end
 end

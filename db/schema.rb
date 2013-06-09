@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130602084939) do
+ActiveRecord::Schema.define(:version => 20130609005520) do
 
   create_table "burdens", :force => true do |t|
     t.integer  "property_id"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20130602084939) do
     t.datetime "updated_at"
     t.boolean  "positive",        :default => true, :null => false
   end
+
+  add_index "likes", ["suggestion_id", "user_identifier"], :name => "index_likes_on_suggestion_id_and_user_identifier", :unique => true
 
   create_table "properties", :force => true do |t|
     t.string   "parcel_id",      :limit => 20
@@ -56,5 +58,7 @@ ActiveRecord::Schema.define(:version => 20130602084939) do
     t.datetime "updated_at"
     t.string   "title",           :limit => 140
   end
+
+  add_index "suggestions", ["property_id", "user_identifier"], :name => "index_suggestions_on_property_id_and_user_identifier", :unique => true
 
 end

@@ -29,6 +29,7 @@
 .span12
   .well
     = form_tag like_suggestion_path(:id => suggestion.id, :property_id => property.id), :method => :put do
+      = render :partial => 'shared/error_messages', :locals => { :errors => suggestion.errors, :name => 'Suggestion' }
       = text_area_tag :comment, nil, :size => '60x4', :placeholder => 'What do you think?', :class => 'enlarge!'
       %br
       .span2{:style => 'margin-left:0!important;'}
