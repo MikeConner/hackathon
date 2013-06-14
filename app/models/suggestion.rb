@@ -14,7 +14,7 @@
 
 class Suggestion < ActiveRecord::Base
   DEFAULT_CATEGORY = 'Housing'
-  CATEGORIES = ['Grocery', 'Restaurant', 'Parking', 'Art Space', 'Coworking Space', 'Strip Club', 'Bar', 'Retail', 'Park', 'Housing', 'Pharmacy', 'Waffle House', 'Other']
+  CATEGORIES = ['Grocery', 'Restaurant', 'Parking', 'Art Space', 'Coworking Space', 'Dance Hall', 'Bar', 'Retail', 'Park', 'Housing', 'Pharmacy', 'Other']
   TITLE_LEN = 140
   
   attr_accessible :category, :description, :user_identifier, :title,
