@@ -2,7 +2,7 @@
 #
 # Table name: suggestions
 #
-#  id              :integer         not null, primary key
+#  id              :integer          not null, primary key
 #  property_id     :integer
 #  category        :string(255)
 #  description     :string(255)

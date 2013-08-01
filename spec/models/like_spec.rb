@@ -2,13 +2,13 @@
 #
 # Table name: likes
 #
-#  id              :integer         not null, primary key
+#  id              :integer          not null, primary key
 #  suggestion_id   :integer
 #  user_identifier :string(255)
 #  comment         :text
-#  created_at      :datetime        not null
-#  updated_at      :datetime        not null
-#  positive        :boolean
+#  created_at      :datetime
+#  updated_at      :datetime
+#  positive        :boolean          default(TRUE), not null
 #
 
 require 'spec_helper'

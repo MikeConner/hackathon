@@ -2,7 +2,7 @@
 #
 # Table name: properties
 #
-#  id             :integer         not null, primary key
+#  id             :integer          not null, primary key
 #  parcel_id      :string(20)
 #  address        :string(128)
 #  land_value     :integer
